@@ -31,24 +31,24 @@ def load_image(path, window):
         r = requests.post(CUSTOM_VISION_ENDPOINT, data=image_raw, timeout=5)
 
         if r.status_code == 200:
-            window["prediction"].update(r.text)
+
             prediction = json.loads(r.text)
             if prediction:
 
                 predictions = prediction.get("predictions")
                 if not predictions:
                     return
-                
+
                 predictions.sort(key=lambda x: x["probability"], reverse=True)
 
-                window["prediction"].update(
-                    "Prediction: " + predictions[0]["tagName"])
+                window["label"].update(
+                    "Label: " + predictions[0]["tagName"])
                 probablity = predictions[0]["probability"]
 
                 text_color = "black" if probablity > TRESHOLD else "red"
 
-                window["confidence"].update(
-                    "Confidence: " + str(predictions[0]["probability"]), text_color=text_color, background_color="white")
+                window["probability"].update(
+                    "Probability: " + str(predictions[0]["probability"]), text_color=text_color, background_color="white")
 
     except Exception as e:
         print(e)
@@ -67,8 +67,8 @@ def main():
             sg.Button("Next")
         ],
         [sg.Image(key="image")],
-        [sg.Text(key="prediction", font=font)],
-        [sg.Text(key="confidence", font=font)],
+        [sg.Text(key="label", font=font)],
+        [sg.Text(key="probability", font=font)],
     ]
 
     window = sg.Window("Azure Custom Vision Image Scoring",
