@@ -59,7 +59,7 @@ def main():
     elements = [
         [
             sg.Text("Image folder"),
-            sg.Input(size=(25, 1), enable_events=True, key="file"),
+            sg.Input(size=(50, 1), enable_events=True, key="file"),
             sg.FolderBrowse(),
         ],
         [
