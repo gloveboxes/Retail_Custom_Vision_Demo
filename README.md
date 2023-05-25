@@ -6,7 +6,7 @@ The project has been tested on the following platforms:
 
 1. Windows 11 on Intel and ARM
 2. Ubuntu 20.04 on Intel and ARM
-3. MacOS Ventura on ARM
+3. MacOS Ventura on ARM - Note, Custom Vision model does not build on Apple Silicon.
 
 ## Clone the repo
 
