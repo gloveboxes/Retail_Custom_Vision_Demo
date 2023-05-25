@@ -4,9 +4,17 @@ This project is a demo of how Custom Vision can be used to help vision impaired 
 
 The project has been tested on the following platforms:
 
+The Custom Vision Client app has been tested on the following platforms:
+
 1. Windows 11 on Intel and ARM
 2. Ubuntu 20.04 on Intel and ARM
 3. MacOS Ventura on ARM - Note, Custom Vision model does not build on Apple Silicon.
+
+If you want to run the Custom Vision model locally, then one of the following platforms is required.
+
+1. Windows 11 on Intel
+2. Ubuntu 20.04 on Intel
+3. Raspberry Pi on ARM
 
 ## Clone the repo
 
