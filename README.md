@@ -54,7 +54,7 @@ The Custom Vision model can be used as a cloud service or deployed locally. To d
 
     ```bash
     docker run -p 80:80 -d custom_vision_model
-```
+    ```
 
 ### Create your own Custom Vision model
 
